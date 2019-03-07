@@ -1,4 +1,4 @@
-from utils import *
+from utils import load_image, get_ext, requests
 
 
 def fetch_hubble_image(image_id):
@@ -7,7 +7,7 @@ def fetch_hubble_image(image_id):
     best_image = response.json()['image_files'][-1]
     image_ext = get_ext(best_image['file_url'])
     image_url = best_image.get('file_url')
-    load_image(image_url, f"{image_id}.{image_ext}")
+    load_image(image_url, f"{image_id}{image_ext}")
 
 
 def get_ids_from_collection(collection):

@@ -1,20 +1,13 @@
 import os
 import time
 import argparse
+from utils import get_image_to_upload
 import instabot
 from dotenv import load_dotenv
 
 
-load_dotenv()
-
-
-def get_image_to_upload(images_path):
-    if os.path.exists(images_path):
-        for image in os.listdir(images_path):
-            yield os.path.join(images_path, image)
-
-
 if __name__ == '__main__':
+    load_dotenv()
     parser = argparse.ArgumentParser(description='Upload images to Instagram account')
     parser.add_argument('path', metavar='-p', help='Path to images directory')
     args = parser.parse_args()

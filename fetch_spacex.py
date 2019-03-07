@@ -1,4 +1,4 @@
-from utils import *
+from utils import load_image, requests
 
 
 def fetch_spacex_last_launch():
